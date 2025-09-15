@@ -43,27 +43,6 @@ const JardinierWebsite = () => {
     }
   ];
 
-  const testimonials = [
-    {
-      name: "Marie Dubois",
-      ville: "Valenciennes",
-      text: "Excellent travail ! Mon jardin n'a jamais été aussi beau. Très professionnel et ponctuel.",
-      rating: 5
-    },
-    {
-      name: "Pierre Martin",
-      ville: "Lille",
-      text: "L'élagage de mes arbres a été parfait. Prix raisonnable et travail soigné.",
-      rating: 5
-    },
-    {
-      name: "Sophie Leroux",
-      ville: "Douai",
-      text: "Je recommande ! Très à l'écoute et respecte parfaitement les délais.",
-      rating: 5
-    }
-  ];
-
   const avantages = [
     "Devis gratuit et sans engagement",
     "Matériel professionnel dernière génération",
@@ -140,7 +119,8 @@ const JardinierWebsite = () => {
       flexDirection: 'column',
       gap: '1rem',
       alignItems: 'center',
-      marginBottom: '3rem'
+      justifyContent: 'center',
+      minHeight: '100px', // Ajustez la hauteur selon vos besoins
     },
     buttonPrimary: {
       backgroundColor: 'white',
@@ -401,7 +381,7 @@ const JardinierWebsite = () => {
             <div style={styles.logo}>
               <TreePine size={32} color="#86efac" />
               <div>
-                <h1 style={{ fontSize: '1.5rem', fontWeight: 'bold', margin: 0 }}>Jardins Expert</h1>
+                <h1 style={{ fontSize: '1.5rem', fontWeight: 'bold', margin: 0 }}>Aklimbo</h1>
                 <p style={{ fontSize: '0.875rem', color: '#86efac', margin: 0 }}>Votre spécialiste du jardin</p>
               </div>
             </div>
@@ -439,32 +419,17 @@ const JardinierWebsite = () => {
             <span style={{ color: '#86efac' }}>Jardinage & Élagage</span>
           </h2>
           <p style={styles.heroSubtitle}>
-            Professionnel expérimenté depuis plus de 10 ans pour l'entretien de vos espaces verts, 
-            élagage et création de jardins dans le Nord-Pas-de-Calais.
+            Professionnel pour l'entretien de vos espaces verts, 
+            élagage et création de jardins dans Bruxelles et ses alentoures.
           </p>
           
-          <div style={styles.buttonGroup}>
+          <div style={styles.buttonGroup} alignItems="center">
             <a href="#contact" style={styles.buttonPrimary}>
               🌿 Devis gratuit
             </a>
             <a href="tel:+33123456789" style={styles.buttonSecondary}>
               📞 01 23 45 67 89
             </a>
-          </div>
-
-          <div style={styles.statsGrid}>
-            <div style={styles.statItem}>
-              <div style={styles.statNumber}>10+</div>
-              <div style={{ fontSize: '1.125rem' }}>Années d'expérience</div>
-            </div>
-            <div style={styles.statItem}>
-              <div style={styles.statNumber}>500+</div>
-              <div style={{ fontSize: '1.125rem' }}>Clients satisfaits</div>
-            </div>
-            <div style={styles.statItem}>
-              <div style={styles.statNumber}>24h</div>
-              <div style={{ fontSize: '1.125rem' }}>Réponse garantie</div>
-            </div>
           </div>
         </div>
       </section>
@@ -494,7 +459,7 @@ const JardinierWebsite = () => {
         </div>
       </section>
 
-      {/* Section À propos */}
+      {/* Section À propos */}{/*Change cette partie avec des photos */}
       <section id="apropos" style={styles.section}>
         <div style={styles.container}>
           <div style={styles.aboutGrid}>
@@ -540,32 +505,6 @@ const JardinierWebsite = () => {
         </div>
       </section>
 
-      {/* Témoignages */}
-      <section style={styles.sectionGray}>
-        <div style={styles.container}>
-          <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-            <h2 style={styles.sectionTitle}>Témoignages Clients</h2>
-            <p style={styles.sectionSubtitle}>Ce que nos clients pensent de nos services</p>
-          </div>
-          
-          <div style={styles.testimonialsGrid}>
-            {testimonials.map((testimonial, index) => (
-              <div key={index} style={styles.testimonialCard}>
-                <div style={styles.starsContainer}>
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} size={20} color="#fbbf24" fill="#fbbf24" />
-                  ))}
-                </div>
-                <p style={styles.testimonialText}>"{testimonial.text}"</p>
-                <div style={{ borderTop: '1px solid #e5e7eb', paddingTop: '1rem' }}>
-                  <p style={{ fontWeight: 'bold', color: '#1f2937', fontSize: '1.125rem', margin: '0 0 0.25rem 0' }}>{testimonial.name}</p>
-                  <p style={{ color: '#059669', margin: 0 }}>{testimonial.ville}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Section Contact */}
       <section id="contact" style={styles.contactSection}>
